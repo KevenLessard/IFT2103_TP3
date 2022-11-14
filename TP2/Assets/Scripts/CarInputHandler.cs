@@ -1,21 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
-using UnityEditor.UIElements;
 using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
 
-public class PlayerController : MonoBehaviour
+public class CarInputHandler : MonoBehaviour
 {
     // Start is called before the first frame update
+    private TopDownCarController topDownCarController;
 
     private KeyCode up;
     private KeyCode down;
     private KeyCode left;
     private KeyCode right;
-
-    public float speed;
-    private Vector3 direction;
+    void Awake()
+    {
+        topDownCarController = GetComponent<TopDownCarController>();
+    }
     void Start()
     {
         up = KeyCode.W;
@@ -27,24 +26,29 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 inputVector = Vector3.zero;
+
         if (Input.GetKey(up))
         {
-            direction.z += 1;
-        }
-        if (Input.GetKey(down))
-        {
-            direction.z -= 1;
-        }
-        if (Input.GetKey(left))
-        {
-            direction.x -= 1;
-        }
-        if (Input.GetKey(right))
-        {
-            direction.x += 1;
+            inputVector.x += 1;
         }
 
-        transform.position += direction.normalized * Time.deltaTime * speed;
-        direction = Vector3.zero;
+        if (Input.GetKey(down))
+        {
+            inputVector.x -= 1;
+        }
+
+        if (Input.GetKey(left))
+        {
+            inputVector.z += 1;
+        }
+
+        if (Input.GetKey(right))
+        {
+            inputVector.z -= 1;
+        }
+        
+
+        topDownCarController.SetInputVector(inputVector);
     }
 }
