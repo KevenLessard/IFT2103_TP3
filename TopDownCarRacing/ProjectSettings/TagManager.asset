@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 121956573
+    locked: 0
+  - name: Tracks
+    uniqueID: 2267598697
+    locked: 0
+  - name: Cars
+    uniqueID: 724182907
     locked: 0

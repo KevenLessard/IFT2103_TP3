@@ -7,6 +7,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Finish_line.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RaceLogic.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -45,10 +49,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6856">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27296">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="6856" />
+      <option name="pid" value="27296" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -65,7 +69,8 @@
       <option name="presentableId" value="Default" />
       <updated>1668468951554</updated>
       <workItem from="1668468957512" duration="3205000" />
-      <workItem from="1668490447346" duration="2849000" />
+      <workItem from="1668490447346" duration="6571000" />
+      <workItem from="1668552518817" duration="8683000" />
     </task>
     <servers />
   </component>
@@ -90,22 +95,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs</url>
-          <line>27</line>
-          <properties documentPath="C:\Users\keven\OneDrive\Documents\Ecole\IFT-2103\TP2\IFT2103A22_TP2_Equipe03\TopDownCarRacing\Assets\Scripts\InputManager.cs" initialLine="27" containingFunctionPresentation="method 'GetInput'">
-            <startOffsets>
-              <option value="721" />
-            </startOffsets>
-            <endOffsets>
-              <option value="763" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Frame#InputManager.GetInput" memberName="playerNumber" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
