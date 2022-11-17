@@ -7,54 +7,68 @@ using System;
 
 public class RaceLogic : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI player_one_text;
-    [SerializeField] private TextMeshProUGUI player_two_text;
+    [SerializeField] private TextMeshProUGUI playerOneText;
+    [SerializeField] private TextMeshProUGUI playerTwoText;
     [SerializeField] private TextMeshProUGUI winText;
+    [SerializeField] private GameObject optionMenu;
+    private GameObject _optionMenuInstance;
 
     [SerializeField] private int numberOfLaps;
 
-    private int currentLapOne;
-    private int currentLapTwo;
+    private int _currentLapOne;
+    private int _currentLapTwo;
 
-    private float timeOne;
-    private float timeTwo;
+    private float _timeOne;
+    private float _timeTwo;
 
-    private float oneCurrentBest;
+    private float _oneCurrentBest;
 
-    private float twoCurrentBest;
+    private float _twoCurrentBest;
+
+    private bool _isMenuOpen;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentLapOne = 0;
-        currentLapTwo = 0;
-        oneCurrentBest = float.MaxValue;
-        twoCurrentBest = float.MaxValue;
+        _currentLapOne = 0;
+        _currentLapTwo = 0;
+        _oneCurrentBest = float.MaxValue;
+        _twoCurrentBest = float.MaxValue;
         winText.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeOne += Time.deltaTime;
-        timeTwo += Time.deltaTime;
-
-        //Check input for menu, make sure it can only open one
+        _timeOne += Time.deltaTime;
+        _timeTwo += Time.deltaTime;
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (_isMenuOpen)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
     }
 
     public void UpdateText(string pPlayer)
     {
         if (pPlayer == "Player_one")
         {
-            currentLapOne++;
+            _currentLapOne++;
 
-            if (currentLapOne == 1)
+            if (_currentLapOne == 1)
             {
-                player_one_text.SetText($"Lap: {currentLapOne}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
+                playerOneText.SetText($"Lap: {_currentLapOne}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
             }
             else
             {
-                if (currentLapOne == numberOfLaps + 1)
+                if (_currentLapOne == numberOfLaps + 1)
                 {
                     winText.SetText("Player one wins!");
                     winText.color = new Color32(173, 75, 55, 255);
@@ -62,30 +76,30 @@ public class RaceLogic : MonoBehaviour
                 }
                 else
                 {
-                    if (timeOne < oneCurrentBest)
+                    if (_timeOne < _oneCurrentBest)
                     {
-                        oneCurrentBest = timeOne;
+                        _oneCurrentBest = _timeOne;
                     }
 
-                    player_one_text.SetText(
-                        $"Lap: {currentLapOne}/{numberOfLaps}\nLast lap:\n{Math.Round(timeOne, 2)}\nBest lap:\n{Math.Round(oneCurrentBest, 2)}");
+                    playerOneText.SetText(
+                        $"Lap: {_currentLapOne}/{numberOfLaps}\nLast lap:\n{Math.Round(_timeOne, 2)}\nBest lap:\n{Math.Round(_oneCurrentBest, 2)}");
                 }
             }
 
 
-            timeOne = 0;
+            _timeOne = 0;
         }
         else
         {
-            currentLapTwo++;
+            _currentLapTwo++;
 
-            if (currentLapTwo == 1)
+            if (_currentLapTwo == 1)
             {
-                player_two_text.SetText($"Lap: {currentLapTwo}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
+                playerTwoText.SetText($"Lap: {_currentLapTwo}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
             }
             else
             {
-                if (currentLapTwo == numberOfLaps + 1)
+                if (_currentLapTwo == numberOfLaps + 1)
                 {
                     winText.SetText("Player two wins!");
                     winText.color = new Color32(52, 65, 147, 255);
@@ -93,17 +107,31 @@ public class RaceLogic : MonoBehaviour
                 }
                 else
                 {
-                    if (timeTwo < twoCurrentBest)
+                    if (_timeTwo < _twoCurrentBest)
                     {
-                        twoCurrentBest = timeTwo;
+                        _twoCurrentBest = _timeTwo;
                     }
 
-                    player_two_text.SetText(
-                        $"Lap: {currentLapTwo}/{numberOfLaps}\nLast lap:\n{Math.Round(timeTwo, 2)}\nBest lap:\n{Math.Round(twoCurrentBest, 2)}");
+                    playerTwoText.SetText(
+                        $"Lap: {_currentLapTwo}/{numberOfLaps}\nLast lap:\n{Math.Round(_timeTwo, 2)}\nBest lap:\n{Math.Round(_twoCurrentBest, 2)}");
                 }
             }
 
-            timeTwo = 0;
+            _timeTwo = 0;
         }
+    }
+
+    private void PauseGame()
+    {
+        Time.timeScale = 0;
+        _optionMenuInstance = Instantiate(optionMenu, transform);
+        _isMenuOpen = true;
+    }
+
+    private void ResumeGame()
+    {
+        Destroy(_optionMenuInstance);
+        Time.timeScale = 1;
+        _isMenuOpen = false;
     }
 }
