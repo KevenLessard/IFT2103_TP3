@@ -5,20 +5,23 @@ using UnityEngine.Serialization;
 
 public class TopDownCarController : MonoBehaviour
 {
-    public InputManager inputManager;
+    [FormerlySerializedAs("inputManager")] public Inputs inputs;
     public float maxSpeed;
     public float acceleration;
     public float steering;
  
     private Rigidbody2D _rb;
+
+    private KeyCode[] keyCodes;
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        keyCodes = inputs.GetInputs(this.name);
     }
  
     private void FixedUpdate()
     {
-        Vector2 inputs = inputManager.GetInput(this.name);
+        Vector2 inputs = GetInput();
 
         // Calculate speed from input and acceleration (transform.up is forward)
         Vector2 speed = transform.up * (inputs.x * acceleration);
@@ -45,5 +48,32 @@ public class TopDownCarController : MonoBehaviour
         {
             _rb.velocity = _rb.velocity.normalized * maxSpeed;
         }
+    }
+    
+    private Vector2 GetInput()
+    {
+        Vector2 playerInputs = Vector2.zero;
+
+        if (Input.GetKey(keyCodes[0]))
+        {
+            playerInputs.x += 1;
+        }
+
+        if (Input.GetKey(keyCodes[1]))
+        {
+            playerInputs.x -= 1;
+        }
+
+        if (Input.GetKey(keyCodes[2]))
+        {
+            playerInputs.y -= 1;
+        }
+
+        if (Input.GetKey(keyCodes[3]))
+        {
+            playerInputs.y += 1;
+        }
+
+        return playerInputs;
     }
 }
