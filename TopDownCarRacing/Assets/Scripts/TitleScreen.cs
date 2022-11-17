@@ -1,21 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class TitleScreen : MonoBehaviour
 {
-    public TextMeshProUGUI pressAnyKeyText;
+    [SerializeField] private TextMeshProUGUI pressAnyKeyText;
 
-    public Button startGameButton;
+    [SerializeField] private Button startGameButton;
 
-    public Button optionButton;
-
-    public GameObject optionMenu;
+    [SerializeField] private Button optionButton;
 
     private bool isKeyPressed;
     // Start is called before the first frame update
@@ -41,22 +37,11 @@ public class TitleScreen : MonoBehaviour
     
     public void OnStartGameClick()
     {
-        StartCoroutine(Load());
+        TitleController.Instance.StartGame();
     }
 
     public void OnOptionClick()
     {
-        optionMenu.gameObject.SetActive(true);
-    }
-
-    private IEnumerator Load()
-    {
-        AsyncOperation handle = SceneManager.LoadSceneAsync("Level_one");
-        while (!handle.isDone)
-        {
-            //TO DO update UI with progress
-            //handle.progress
-            yield return null;
-        }
+        TitleController.Instance.OpenOptionMenu();
     }
 }

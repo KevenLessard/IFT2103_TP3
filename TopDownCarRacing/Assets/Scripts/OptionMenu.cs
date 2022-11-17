@@ -1,24 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class OptionMenu : MonoBehaviour
 {
-    public GameObject previousUI;
-
-    public Button controlsButton;
-
-    public Button quitGameButton;
-
-    public Button returnButton;
-
-    private void OnEnable()
-    {
-        previousUI.gameObject.SetActive(false);
-    }
-
+    [SerializeField] private GameObject mainOptionCanvas;
+    
+    [SerializeField] private GameObject controlsOptionCanvas;
     public void OnQuitGameClick()
     {
         Application.Quit();
@@ -31,6 +22,10 @@ public class OptionMenu : MonoBehaviour
 
     public void OnReturnClick()
     {
-        
+        if (TitleController.Instance)
+        {
+            TitleController.Instance.ShowTitleMenu();
+        }
+        Destroy(gameObject);
     }
 }

@@ -5,10 +5,10 @@ using UnityEngine.Serialization;
 
 public class TopDownCarController : MonoBehaviour
 {
-    [FormerlySerializedAs("inputManager")] public Inputs inputs;
-    public float maxSpeed;
-    public float acceleration;
-    public float steering;
+    [SerializeField] private Inputs inputs;
+    [SerializeField] private float maxSpeed;
+    [SerializeField] private float acceleration;
+    [SerializeField] private float steering;
  
     private Rigidbody2D _rb;
     private void Start()

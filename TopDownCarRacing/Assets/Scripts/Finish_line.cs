@@ -4,21 +4,12 @@ using UnityEngine;
 
 public class Finish_line : MonoBehaviour
 {
-    public RaceLogic raceLogic;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    private RaceLogic raceLogic;
 
     private void OnTriggerEnter2D(Collider2D pCollider)
     {
+        //Make sure cars enter on the right side of the collider
         raceLogic.UpdateText(pCollider.name);
     }
 }
