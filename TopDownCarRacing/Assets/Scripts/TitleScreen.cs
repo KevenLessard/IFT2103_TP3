@@ -17,24 +17,11 @@ public class TitleScreen : MonoBehaviour
 
     public GameObject optionMenu;
 
-    [FormerlySerializedAs("InputManager")] public Inputs inputs;
-
     private bool isKeyPressed;
     // Start is called before the first frame update
     void Start()
     {
         isKeyPressed = false;
-        
-        //Set default control
-        inputs._playerOneInputs[0] = KeyCode.W;
-        inputs._playerOneInputs[1] = KeyCode.S;
-        inputs._playerOneInputs[2] = KeyCode.D;
-        inputs._playerOneInputs[3] = KeyCode.A;
-
-        inputs._playerTwoInputs[0] = KeyCode.UpArrow;
-        inputs._playerTwoInputs[1] = KeyCode.DownArrow;
-        inputs._playerTwoInputs[2] = KeyCode.RightArrow;
-        inputs._playerTwoInputs[3] = KeyCode.LeftArrow;
     }
 
     // Update is called once per frame

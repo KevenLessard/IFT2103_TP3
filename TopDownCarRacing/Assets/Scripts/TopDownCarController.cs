@@ -11,12 +11,9 @@ public class TopDownCarController : MonoBehaviour
     public float steering;
  
     private Rigidbody2D _rb;
-
-    private KeyCode[] keyCodes;
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        keyCodes = inputs.GetInputs(this.name);
     }
  
     private void FixedUpdate()
@@ -54,24 +51,24 @@ public class TopDownCarController : MonoBehaviour
     {
         Vector2 playerInputs = Vector2.zero;
 
-        if (Input.GetKey(keyCodes[0]))
+        if (Input.GetKey(inputs._playerInputs[0]))
         {
             playerInputs.x += 1;
         }
 
-        if (Input.GetKey(keyCodes[1]))
+        if (Input.GetKey(inputs._playerInputs[1]))
         {
             playerInputs.x -= 1;
         }
 
-        if (Input.GetKey(keyCodes[2]))
-        {
-            playerInputs.y -= 1;
-        }
-
-        if (Input.GetKey(keyCodes[3]))
+        if (Input.GetKey(inputs._playerInputs[2]))
         {
             playerInputs.y += 1;
+        }
+
+        if (Input.GetKey(inputs._playerInputs[3]))
+        {
+            playerInputs.y -= 1;
         }
 
         return playerInputs;

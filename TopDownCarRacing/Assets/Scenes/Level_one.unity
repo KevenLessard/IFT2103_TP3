@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8088503b5f82f48b03c4a451677a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 11400000, guid: c829e6bd4d9157643b20f2988723162e, type: 2}
+  inputs: {fileID: 11400000, guid: c829e6bd4d9157643b20f2988723162e, type: 2}
   maxSpeed: 20
   acceleration: 8
   steering: 4
@@ -1647,6 +1647,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6174521086716003315, guid: 5baadbd79fbf7c04d9db9c5f92d03366, type: 3}
+      propertyPath: inputs
+      value: 
+      objectReference: {fileID: 11400000, guid: 75499132d8b2a2c46973950e3f35bce0, type: 2}
     - target: {fileID: 6174521086716003315, guid: 5baadbd79fbf7c04d9db9c5f92d03366, type: 3}
       propertyPath: inputManager
       value: 
