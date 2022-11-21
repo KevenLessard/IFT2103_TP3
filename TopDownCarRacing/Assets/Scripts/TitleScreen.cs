@@ -12,7 +12,7 @@ public class TitleScreen : MonoBehaviour
     [SerializeField] private Button startGameButton;
 
     [SerializeField] private Button optionButton;
-
+    
     private bool isKeyPressed;
     // Start is called before the first frame update
     void Start()
