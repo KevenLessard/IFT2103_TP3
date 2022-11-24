@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class TopDownCarController : MonoBehaviour
+public class OnlineTopDownCarController : NetworkBehaviour
 {
     [SerializeField] private Inputs inputs;
     [SerializeField] private float maxSpeed;
@@ -15,6 +16,8 @@ public class TopDownCarController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
     }
+
+
  
     private void FixedUpdate()
     {
@@ -23,7 +26,7 @@ public class TopDownCarController : MonoBehaviour
         // Calculate speed from input and acceleration (transform.up is forward)
         Vector2 speed = transform.up * (inputs.x * acceleration);
         _rb.AddForce(speed);
-        
+ 
         // Create car rotation
         float direction = Vector2.Dot(_rb.velocity, _rb.GetRelativeVector(Vector2.up));
         if (direction >= 0.0f)
@@ -45,6 +48,12 @@ public class TopDownCarController : MonoBehaviour
         {
             _rb.velocity = _rb.velocity.normalized * maxSpeed;
         }
+    }
+    
+    public override void OnNetworkSpawn()
+    {
+        if(!IsOwner) Destroy(this);
+        
     }
     
     private Vector2 GetInput()
