@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public class RaceLogic : MonoBehaviour
@@ -32,6 +33,8 @@ public class RaceLogic : MonoBehaviour
 
     private bool _isMenuOpen;
 
+    private bool _isRaceOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,7 @@ public class RaceLogic : MonoBehaviour
         _oneCurrentBest = float.MaxValue;
         _twoCurrentBest = float.MaxValue;
         winText.enabled = false;
+        _isRaceOver = false;
     }
 
     // Update is called once per frame
@@ -61,6 +65,11 @@ public class RaceLogic : MonoBehaviour
             {
                 PauseGame();
             }
+        }
+
+        if (_isRaceOver)
+        {
+            SceneManager.LoadSceneAsync("Title_screen");
         }
     }
 
@@ -87,6 +96,10 @@ public class RaceLogic : MonoBehaviour
                 winText.SetText("Player one wins!");
                 winText.color = new Color32(173, 75, 55, 255);
                 winText.enabled = true;
+                if (_currentLapTwo >= numberOfLaps + 1)
+                {
+                    _isRaceOver = true;
+                }
             }
             else
             {
@@ -123,6 +136,10 @@ public class RaceLogic : MonoBehaviour
                 winText.SetText("Player two wins!");
                 winText.color = new Color32(52, 65, 147, 255);
                 winText.enabled = true;
+                if (_currentLapOne >= numberOfLaps + 1)
+                {
+                    _isRaceOver = true;
+                }
             }
             else
             {
