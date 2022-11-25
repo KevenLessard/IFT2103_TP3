@@ -11,12 +11,17 @@ public class RaceLogic : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerTwoText;
     [SerializeField] private TextMeshProUGUI winText;
     [SerializeField] private GameObject optionMenu;
+    [SerializeField] private GameObject[] checkpoints;
     private GameObject _optionMenuInstance;
 
     [SerializeField] private int numberOfLaps;
 
     private int _currentLapOne;
     private int _currentLapTwo;
+    private int _currentCheckpointOne;
+    private int _currentCheckpointTwo;
+
+    private int _numberOfCheckpoints;
 
     private float _timeOne;
     private float _timeTwo;
@@ -32,6 +37,9 @@ public class RaceLogic : MonoBehaviour
     {
         _currentLapOne = 0;
         _currentLapTwo = 0;
+        _currentCheckpointOne = 0;
+        _currentCheckpointTwo = 0;
+        _numberOfCheckpoints = checkpoints.Length;
         _oneCurrentBest = float.MaxValue;
         _twoCurrentBest = float.MaxValue;
         winText.enabled = false;
@@ -42,7 +50,7 @@ public class RaceLogic : MonoBehaviour
     {
         _timeOne += Time.deltaTime;
         _timeTwo += Time.deltaTime;
-        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (_isMenuOpen)
@@ -60,30 +68,35 @@ public class RaceLogic : MonoBehaviour
     {
         if (pPlayer == "Player_one")
         {
+            if (_currentCheckpointOne != _numberOfCheckpoints)
+            {
+                if (_currentLapOne == 0)
+                {
+                    _currentLapOne++;
+                    playerOneText.SetText($"Lap: {_currentLapOne}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
+                }
+
+                return;
+            }
+
+            _currentCheckpointOne = 0;
             _currentLapOne++;
 
-            if (_currentLapOne == 1)
+            if (_currentLapOne == numberOfLaps + 1)
             {
-                playerOneText.SetText($"Lap: {_currentLapOne}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
+                winText.SetText("Player one wins!");
+                winText.color = new Color32(173, 75, 55, 255);
+                winText.enabled = true;
             }
             else
             {
-                if (_currentLapOne == numberOfLaps + 1)
+                if (_timeOne < _oneCurrentBest)
                 {
-                    winText.SetText("Player one wins!");
-                    winText.color = new Color32(173, 75, 55, 255);
-                    winText.enabled = true;
+                    _oneCurrentBest = _timeOne;
                 }
-                else
-                {
-                    if (_timeOne < _oneCurrentBest)
-                    {
-                        _oneCurrentBest = _timeOne;
-                    }
 
-                    playerOneText.SetText(
-                        $"Lap: {_currentLapOne}/{numberOfLaps}\nLast lap:\n{Math.Round(_timeOne, 2)}\nBest lap:\n{Math.Round(_oneCurrentBest, 2)}");
-                }
+                playerOneText.SetText(
+                    $"Lap: {_currentLapOne}/{numberOfLaps}\nLast lap:\n{Math.Round(_timeOne, 2)}\nBest lap:\n{Math.Round(_oneCurrentBest, 2)}");
             }
 
 
@@ -91,33 +104,63 @@ public class RaceLogic : MonoBehaviour
         }
         else
         {
+            if (_currentCheckpointTwo != _numberOfCheckpoints)
+            {
+                if (_currentLapTwo == 0)
+                {
+                    _currentLapTwo++;
+                    playerTwoText.SetText($"Lap: {_currentLapTwo}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
+                }
+
+                return;
+            }
+
+            _currentCheckpointTwo = 0;
             _currentLapTwo++;
 
-            if (_currentLapTwo == 1)
+            if (_currentLapTwo == numberOfLaps + 1)
             {
-                playerTwoText.SetText($"Lap: {_currentLapTwo}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
+                winText.SetText("Player two wins!");
+                winText.color = new Color32(52, 65, 147, 255);
+                winText.enabled = true;
             }
             else
             {
-                if (_currentLapTwo == numberOfLaps + 1)
+                if (_timeTwo < _twoCurrentBest)
                 {
-                    winText.SetText("Player two wins!");
-                    winText.color = new Color32(52, 65, 147, 255);
-                    winText.enabled = true;
+                    _twoCurrentBest = _timeTwo;
                 }
-                else
-                {
-                    if (_timeTwo < _twoCurrentBest)
-                    {
-                        _twoCurrentBest = _timeTwo;
-                    }
 
-                    playerTwoText.SetText(
-                        $"Lap: {_currentLapTwo}/{numberOfLaps}\nLast lap:\n{Math.Round(_timeTwo, 2)}\nBest lap:\n{Math.Round(_twoCurrentBest, 2)}");
-                }
+                playerTwoText.SetText(
+                    $"Lap: {_currentLapTwo}/{numberOfLaps}\nLast lap:\n{Math.Round(_timeTwo, 2)}\nBest lap:\n{Math.Round(_twoCurrentBest, 2)}");
             }
 
+
             _timeTwo = 0;
+        }
+    }
+
+    public void updateCheckPoints(string pPlayer, Checkpoint pCheckpoint)
+    {
+        if (pPlayer == "Player_one")
+        {
+            if (_currentCheckpointOne < _numberOfCheckpoints)
+            {
+                if (pCheckpoint.name == checkpoints[_currentCheckpointOne].name)
+                {
+                    _currentCheckpointOne++;
+                }
+            }
+        }
+        else
+        {
+            if (_currentCheckpointTwo < _numberOfCheckpoints)
+            {
+                if (pCheckpoint.name == checkpoints[_currentCheckpointTwo].name)
+                {
+                    _currentCheckpointTwo++;
+                }
+            }
         }
     }
 
