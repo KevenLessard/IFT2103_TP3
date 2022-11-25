@@ -43,8 +43,13 @@ public class TitleScreen : MonoBehaviour
         TitleController.Instance.StartGame();
     }
 
-    public void OnOptionClick()
+    public void OnStartOnlineClick()
     {
         TitleController.Instance.StartOnlineGame();
+    }
+
+    public void OnOptionClick()
+    {
+        TitleController.Instance.OpenOptionMenu();
     }
 }

@@ -20,9 +20,9 @@ public class TitleController : MonoBehaviour
 
     private GameObject _titleScreenInstance;
 
-    public string levelLocal = "Level_one";
+    public string levelLocal;
 
-    public string levelOnline = "OnlineLevel";
+    public string levelOnline;
 
     private void Awake()
     {

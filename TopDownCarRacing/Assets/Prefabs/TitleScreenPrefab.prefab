@@ -934,7 +934,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4856124845897921691}
         m_TargetAssemblyTypeName: TitleScreen, Assembly-CSharp
-        m_MethodName: OnOptionClick
+        m_MethodName: OnStartOnlineClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
