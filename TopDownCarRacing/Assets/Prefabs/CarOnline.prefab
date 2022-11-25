@@ -180,4 +180,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e7fed8baa20e249a2955115d2a0a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cheapInterpolationTime: 0.1
+  _InterpolationTime: 0.1

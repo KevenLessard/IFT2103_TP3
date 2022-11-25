@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 
 public class RaceLogicOnline : MonoBehaviour
@@ -70,9 +72,10 @@ public class RaceLogicOnline : MonoBehaviour
             {
                 if (_currentLapOne == numberOfLaps + 1)
                 {
-                    winText.SetText("Local Player Wins!");
+                    winText.SetText("You won!");
                     winText.color = new Color32(173, 75, 55, 255);
                     winText.enabled = true;
+                    SceneManager.LoadSceneAsync("Title_screen");
                 }
                 else
                 {
@@ -101,9 +104,11 @@ public class RaceLogicOnline : MonoBehaviour
             {
                 if (_currentLapTwo == numberOfLaps + 1)
                 {
-                    winText.SetText("Player two wins!");
+                    winText.SetText("You lost");
                     winText.color = new Color32(52, 65, 147, 255);
                     winText.enabled = true;
+                    SceneManager.LoadSceneAsync("Title_screen");
+
                 }
                 else
                 {
