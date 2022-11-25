@@ -3,13 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="84c2c30f-655c-4d94-881c-34c4c680c51e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCarRacing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownCarRacing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TopDownCarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TopDownCarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CarOnline.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CarOnline.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TitleScreenPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TitleScreenPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/OnlineLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/OnlineLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Title_screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Title_screen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Online/OnlineTopDownCarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Online/OnlineTopDownCarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Online/PlayerNetwork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Online/PlayerNetwork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TitleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TitleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +23,16 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RaceLogic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/OptionControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Core/NetworkObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Transports/UTP/UnityTransport.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.services.relay@1.0.4/Runtime/SDK/WrappedRelayService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../TopDownCarRacing_clone_0/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Logging/NetworkLog.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectId" id="2HYjXOsQr52ihZXSMbcSnw5TFXw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -94,6 +103,12 @@
       <workItem from="1668711107042" duration="13947000" />
       <workItem from="1668991185219" duration="784000" />
       <workItem from="1669259451822" duration="10139000" />
+      <workItem from="1669299464719" duration="1589000" />
+      <workItem from="1669306274949" duration="2118000" />
+      <workItem from="1669312685463" duration="2000" />
+      <workItem from="1669313090171" duration="10216000" />
+      <workItem from="1669327226314" duration="4654000" />
+      <workItem from="1669332289655" duration="8977000" />
     </task>
     <servers />
   </component>

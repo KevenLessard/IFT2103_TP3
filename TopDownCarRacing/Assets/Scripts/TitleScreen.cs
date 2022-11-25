@@ -13,6 +13,8 @@ public class TitleScreen : MonoBehaviour
 
     [SerializeField] private Button optionButton;
     
+    [SerializeField] private Button onlineButton;
+    
     private bool isKeyPressed;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,7 @@ public class TitleScreen : MonoBehaviour
                 pressAnyKeyText.enabled = false;
                 startGameButton.gameObject.SetActive(true);
                 optionButton.gameObject.SetActive(true);
+                onlineButton.gameObject.SetActive(true);
             }
         }
     }
@@ -42,6 +45,6 @@ public class TitleScreen : MonoBehaviour
 
     public void OnOptionClick()
     {
-        TitleController.Instance.OpenOptionMenu();
+        TitleController.Instance.StartOnlineGame();
     }
 }

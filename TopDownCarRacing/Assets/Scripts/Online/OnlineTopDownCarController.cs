@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.Services.Lobbies.Models;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -52,7 +54,10 @@ public class OnlineTopDownCarController : NetworkBehaviour
     
     public override void OnNetworkSpawn()
     {
-        if(!IsOwner) Destroy(this);
+        if (!IsOwner)
+        {
+            Destroy(this);
+        }
         
     }
     

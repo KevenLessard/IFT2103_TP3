@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1206064578973606173}
   - component: {fileID: 1010004602089605742}
   m_Layer: 0
-  m_Name: CarOnline
+  m_Name: CarOnline(2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6792453, g: 0.2922984, b: 0.21466713, a: 1}
+  m_Color: {r: 0.12304199, g: 0.29908368, b: 0.745283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   GlobalObjectIdHash: 951099334
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
-  AutoObjectParentSync: 0
+  AutoObjectParentSync: 1
 --- !u!114 &1206064578973606173
 MonoBehaviour:
   m_ObjectHideFlags: 0

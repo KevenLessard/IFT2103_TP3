@@ -20,6 +20,10 @@ public class TitleController : MonoBehaviour
 
     private GameObject _titleScreenInstance;
 
+    public string levelLocal = "Level_one";
+
+    public string levelOnline = "OnlineLevel";
+
     private void Awake()
     {
         Instance = FindObjectOfType<TitleController>();
@@ -43,12 +47,17 @@ public class TitleController : MonoBehaviour
 
     public void StartGame()
     {
-        StartCoroutine(Load());
+        StartCoroutine(Load(levelLocal));
     }
     
-    private IEnumerator Load()
+    public void StartOnlineGame()
     {
-        AsyncOperation handle = SceneManager.LoadSceneAsync("Level_one");
+        StartCoroutine(Load(levelOnline));
+    }
+    
+    private IEnumerator Load(string level)
+    {
+        AsyncOperation handle = SceneManager.LoadSceneAsync(level);
         _titleScreenInstance.SetActive(false);
         loadingScreen.SetActive(true);
         
