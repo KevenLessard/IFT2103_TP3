@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OptionMenu : MonoBehaviour
@@ -11,6 +12,8 @@ public class OptionMenu : MonoBehaviour
     [SerializeField] private GameObject mainOptionCanvas;
 
     [SerializeField] private GameObject controlsOptionCanvas;
+    
+    [SerializeField] private GameObject levelSelectCanvas;
 
     [SerializeField] private Button returnButton;
     
@@ -27,10 +30,17 @@ public class OptionMenu : MonoBehaviour
         controlsOptionCanvas.SetActive(true);
     }
 
+    public void OnLevelSelectClick()
+    {
+        mainOptionCanvas.SetActive(false);
+        levelSelectCanvas.SetActive(true);
+    }
+
     public void OnReturnClick()
     {
-        if (controlsOptionCanvas.activeSelf)
+        if (controlsOptionCanvas.activeSelf || levelSelectCanvas.activeSelf)
         {
+            levelSelectCanvas.SetActive(false);
             controlsOptionCanvas.SetActive(false);
             mainOptionCanvas.SetActive(true);
         }
@@ -49,5 +59,10 @@ public class OptionMenu : MonoBehaviour
                 pressEscText.gameObject.SetActive(true);
             }
         }
+    }
+    public void LoadScene(string level)
+    {
+        SceneManager.LoadScene(level);
+        Time.timeScale = 1;
     }
 }

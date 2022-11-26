@@ -10,6 +10,6 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        raceLogic.updateCheckPoints(other.name, this);
+        raceLogic.UpdateCheckPoints(other.name, this);
     }
 }

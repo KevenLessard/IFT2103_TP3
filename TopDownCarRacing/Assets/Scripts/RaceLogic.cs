@@ -146,7 +146,7 @@ public class RaceLogic : MonoBehaviour
         }
     }
 
-    public void updateCheckPoints(string pPlayer, Checkpoint pCheckpoint)
+    public void UpdateCheckPoints(string pPlayer, Checkpoint pCheckpoint)
     {
         if (pPlayer == "Player_one")
         {
