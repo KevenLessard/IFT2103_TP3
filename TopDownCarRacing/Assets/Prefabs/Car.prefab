@@ -188,6 +188,7 @@ MonoBehaviour:
   maxSpeed: 20
   acceleration: 8
   steering: 4
+  speedBoostTime: 2
 --- !u!50 &6174521086716003324
 Rigidbody2D:
   serializedVersion: 4

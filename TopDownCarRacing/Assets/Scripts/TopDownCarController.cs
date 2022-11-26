@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,18 @@ public class TopDownCarController : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float acceleration;
     [SerializeField] private float steering;
- 
+    [SerializeField] private float speedBoostTime;
+    private float _maxSpeed;
+    private float _acceleration;
+
     private Rigidbody2D _rb;
+
+    private Coroutine _speedBoost;
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _maxSpeed = maxSpeed;
+        _acceleration = acceleration;
     }
  
     private void FixedUpdate()
@@ -21,18 +29,18 @@ public class TopDownCarController : MonoBehaviour
         Vector2 inputs = GetInput();
 
         // Calculate speed from input and acceleration (transform.up is forward)
-        Vector2 speed = transform.up * (inputs.x * acceleration);
+        Vector2 speed = transform.up * (inputs.x * _acceleration);
         _rb.AddForce(speed);
         
         // Create car rotation
         float direction = Vector2.Dot(_rb.velocity, _rb.GetRelativeVector(Vector2.up));
         if (direction >= 0.0f)
         {
-            _rb.rotation += inputs.y * steering * (_rb.velocity.magnitude / maxSpeed);
+            _rb.rotation += inputs.y * steering * (_rb.velocity.magnitude / _maxSpeed);
         }
         else
         {
-            _rb.rotation -= inputs.y * steering * (_rb.velocity.magnitude / maxSpeed);
+            _rb.rotation -= inputs.y * steering * (_rb.velocity.magnitude / _maxSpeed);
         }
  
         // Change velocity based on rotation
@@ -41,12 +49,25 @@ public class TopDownCarController : MonoBehaviour
         _rb.AddForce(_rb.GetRelativeVector(relativeForce));
  
         // Force max speed limit
-        if (_rb.velocity.magnitude > maxSpeed)
+        if (_rb.velocity.magnitude > _maxSpeed)
         {
-            _rb.velocity = _rb.velocity.normalized * maxSpeed;
+            _rb.velocity = _rb.velocity.normalized * _maxSpeed;
         }
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "GoldenSnitch")
+        {
+            if (_speedBoost != null)
+            {
+                StopCoroutine(_speedBoost);
+                _speedBoost = null;
+            }
+            _speedBoost = StartCoroutine(SpeedBoost());
+        }
+    }
+
     private Vector2 GetInput()
     {
         Vector2 playerInputs = Vector2.zero;
@@ -72,5 +93,15 @@ public class TopDownCarController : MonoBehaviour
         }
 
         return playerInputs;
+    }
+
+    IEnumerator SpeedBoost()
+    {
+        _maxSpeed = maxSpeed * 1.5f;
+        _acceleration = _maxSpeed;
+        yield return new WaitForSeconds(speedBoostTime);
+        _maxSpeed = maxSpeed;
+        _acceleration = acceleration;
+        _speedBoost = null;
     }
 }
