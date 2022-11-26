@@ -47,6 +47,8 @@ public class RaceLogic : MonoBehaviour
         _twoCurrentBest = float.MaxValue;
         winText.enabled = false;
         _isRaceOver = false;
+        playerOneText.SetText($"Lap: {_currentLapOne}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
+        playerTwoText.SetText($"Lap: {_currentLapTwo}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
     }
 
     // Update is called once per frame
@@ -97,12 +99,6 @@ public class RaceLogic : MonoBehaviour
                 winText.color = new Color32(173, 75, 55, 255);
                 winText.enabled = true;
                 StartCoroutine(WaitBeforeEnd(3));
-                /*
-                if (_currentLapTwo >= numberOfLaps + 1)
-                {
-                    _isRaceOver = true;
-                }
-                */
             }
             else
             {
@@ -110,12 +106,9 @@ public class RaceLogic : MonoBehaviour
                 {
                     _oneCurrentBest = _timeOne;
                 }
-
                 playerOneText.SetText(
                     $"Lap: {_currentLapOne}/{numberOfLaps}\nLast lap:\n{Math.Round(_timeOne, 2)}\nBest lap:\n{Math.Round(_oneCurrentBest, 2)}");
             }
-
-
             _timeOne = 0;
         }
         else
@@ -127,7 +120,6 @@ public class RaceLogic : MonoBehaviour
                     _currentLapTwo++;
                     playerTwoText.SetText($"Lap: {_currentLapTwo}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
                 }
-
                 return;
             }
 
@@ -140,12 +132,6 @@ public class RaceLogic : MonoBehaviour
                 winText.color = new Color32(52, 65, 147, 255);
                 winText.enabled = true;
                 StartCoroutine(WaitBeforeEnd(3));
-                /*
-                if (_currentLapOne >= numberOfLaps + 1)
-                {
-                    _isRaceOver = true;
-                }
-                */
             }
             else
             {
@@ -153,12 +139,9 @@ public class RaceLogic : MonoBehaviour
                 {
                     _twoCurrentBest = _timeTwo;
                 }
-
                 playerTwoText.SetText(
                     $"Lap: {_currentLapTwo}/{numberOfLaps}\nLast lap:\n{Math.Round(_timeTwo, 2)}\nBest lap:\n{Math.Round(_twoCurrentBest, 2)}");
             }
-
-
             _timeTwo = 0;
         }
     }
@@ -200,7 +183,7 @@ public class RaceLogic : MonoBehaviour
         Time.timeScale = 1;
         _isMenuOpen = false;
     }
-    
+
     IEnumerator WaitBeforeEnd(int time)
     {
         yield return new WaitForSeconds(time);
