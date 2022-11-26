@@ -55,7 +55,7 @@ public class PlayerNetwork : NetworkBehaviour
 
         private float _x;
         private float _y;
-        private float _zRot;
+        private short _zRot;
 
         internal Vector3 Position
         {
@@ -70,7 +70,7 @@ public class PlayerNetwork : NetworkBehaviour
         internal Vector3 Rotation
         {
             get => new Vector3(0, 0, _zRot);
-            set => _zRot = value.z;
+            set => _zRot = (short)value.z;
         }
 
         public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
