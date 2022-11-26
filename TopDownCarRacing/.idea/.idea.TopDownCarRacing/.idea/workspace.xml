@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="84c2c30f-655c-4d94-881c-34c4c680c51e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCarRacing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownCarRacing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_two.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_two.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_two.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_two.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_three.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_three.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +29,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2HYjXOsQr52ihZXSMbcSnw5TFXw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -101,6 +104,9 @@
       <workItem from="1669400090156" duration="89000" />
       <workItem from="1669400202469" duration="4111000" />
       <workItem from="1669406710465" duration="1188000" />
+      <workItem from="1669418906504" duration="7915000" />
+      <workItem from="1669430547967" duration="299000" />
+      <workItem from="1669477513564" duration="2405000" />
     </task>
     <servers />
   </component>
