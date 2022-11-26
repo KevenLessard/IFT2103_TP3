@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
@@ -28,10 +29,16 @@ public class RaceLogicOnline : MonoBehaviour
     private float _twoCurrentBest;
 
     private bool _isMenuOpen;
+    private bool _isRaceOver;
+    private int _counter;
+    private bool _noWinner = true;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        int _counter = 0;
+        _isRaceOver = false;
         _currentLapOne = 0;
         _currentLapTwo = 0;
         _oneCurrentBest = float.MaxValue;
@@ -44,7 +51,7 @@ public class RaceLogicOnline : MonoBehaviour
     {
         _timeOne += Time.deltaTime;
         _timeTwo += Time.deltaTime;
-        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (_isMenuOpen)
@@ -55,6 +62,11 @@ public class RaceLogicOnline : MonoBehaviour
             {
                 PauseGame();
             }
+        }
+
+        if (_isRaceOver)
+        {
+            SceneManager.LoadSceneAsync("Title_screen");
         }
     }
 
@@ -70,12 +82,25 @@ public class RaceLogicOnline : MonoBehaviour
             }
             else
             {
-                if (_currentLapOne == numberOfLaps + 1)
+                if (_currentLapOne == numberOfLaps + 1 && _noWinner)
                 {
                     winText.SetText("You won!");
                     winText.color = new Color32(173, 75, 55, 255);
                     winText.enabled = true;
-                    SceneManager.LoadSceneAsync("Title_screen");
+
+                    if (NetworkManager.Singleton.IsHost)
+                    {
+                        NetworkManager.Singleton.StopAllCoroutines();
+                        StartCoroutine(WaitBeforeEnd(3));
+                    }
+
+                    else if (NetworkManager.Singleton.IsClient)
+                    {
+                        StartCoroutine(WaitBeforeEnd(5));
+                    }
+
+                    _noWinner = false;
+
                 }
                 else
                 {
@@ -102,12 +127,24 @@ public class RaceLogicOnline : MonoBehaviour
             }
             else
             {
-                if (_currentLapTwo == numberOfLaps + 1)
+                if (_currentLapTwo == numberOfLaps + 1 && _noWinner)
                 {
                     winText.SetText("You lost");
                     winText.color = new Color32(52, 65, 147, 255);
                     winText.enabled = true;
-                    SceneManager.LoadSceneAsync("Title_screen");
+                    
+                    if (NetworkManager.Singleton.IsHost)
+                    {
+                        NetworkManager.Singleton.StopAllCoroutines();
+                        StartCoroutine(WaitBeforeEnd(3));
+                    }
+
+                    else if (NetworkManager.Singleton.IsClient)
+                    {
+                        StartCoroutine(WaitBeforeEnd(5));
+                    }
+
+                    _noWinner = false;
 
                 }
                 else
@@ -138,5 +175,12 @@ public class RaceLogicOnline : MonoBehaviour
         Destroy(_optionMenuInstance);
         Time.timeScale = 1;
         _isMenuOpen = false;
+    }
+
+    IEnumerator WaitBeforeEnd(int time)
+    {
+        yield return new WaitForSeconds(time);
+
+        _isRaceOver = true;
     }
 }

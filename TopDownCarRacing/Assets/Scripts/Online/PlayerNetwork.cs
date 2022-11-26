@@ -9,8 +9,6 @@ using UnityEngine;
 public class PlayerNetwork : NetworkBehaviour
 {
 
-    List<NetworkConnection> activeSpawns = new List<NetworkConnection>();
-    
     private readonly NetworkVariable<PlayerNetworkData>
         _netState = new(writePerm: NetworkVariableWritePermission.Owner);
 

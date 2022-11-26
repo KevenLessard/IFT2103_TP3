@@ -96,10 +96,13 @@ public class RaceLogic : MonoBehaviour
                 winText.SetText("Player one wins!");
                 winText.color = new Color32(173, 75, 55, 255);
                 winText.enabled = true;
+                StartCoroutine(WaitBeforeEnd(3));
+                /*
                 if (_currentLapTwo >= numberOfLaps + 1)
                 {
                     _isRaceOver = true;
                 }
+                */
             }
             else
             {
@@ -136,10 +139,13 @@ public class RaceLogic : MonoBehaviour
                 winText.SetText("Player two wins!");
                 winText.color = new Color32(52, 65, 147, 255);
                 winText.enabled = true;
+                StartCoroutine(WaitBeforeEnd(3));
+                /*
                 if (_currentLapOne >= numberOfLaps + 1)
                 {
                     _isRaceOver = true;
                 }
+                */
             }
             else
             {
@@ -193,5 +199,12 @@ public class RaceLogic : MonoBehaviour
         Destroy(_optionMenuInstance);
         Time.timeScale = 1;
         _isMenuOpen = false;
+    }
+    
+    IEnumerator WaitBeforeEnd(int time)
+    {
+        yield return new WaitForSeconds(time);
+
+        _isRaceOver = true;
     }
 }

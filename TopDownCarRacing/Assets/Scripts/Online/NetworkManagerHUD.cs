@@ -20,16 +20,28 @@ public class NetworkManagerHUD : MonoBehaviour
 
     public void StartHost()
     {
-        NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(IP, 7777, "0.0.0.0");
+        if (IP.Length != 0)
+        {
+            NetworkManager.Singleton.StopAllCoroutines();
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(IP, 7777, "0.0.0.0");
             NetworkManager.Singleton.StartHost();
             LanMenu.SetActive(false);
+        }
     }
 
     public void JoinHost()
     {
-        NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(IP, 7777, "0.0.0.0");
+        if (IP.Length != 0)
+        {
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(IP, 7777, "0.0.0.0");
+        
             NetworkManager.Singleton.StartClient();
-            LanMenu.SetActive(false);
+            if(NetworkManager.Singleton.IsConnectedClient)
+            {
+                LanMenu.SetActive(false);
+            }
+        }
+
     }
 
     public void ReadStringInput(string s)
