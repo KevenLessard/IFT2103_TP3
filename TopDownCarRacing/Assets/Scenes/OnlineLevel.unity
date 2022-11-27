@@ -2523,7 +2523,7 @@ MonoBehaviour:
   playerTwoText: {fileID: 277339533}
   winText: {fileID: 411260444}
   optionMenu: {fileID: 15401482995417650, guid: e4a98f19a7fc2c04997ae25dc9dd270c, type: 3}
-  numberOfLaps: 4
+  numberOfLaps: 3
 --- !u!1 &2137883018
 GameObject:
   m_ObjectHideFlags: 0

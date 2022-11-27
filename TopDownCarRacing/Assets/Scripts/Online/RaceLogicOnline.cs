@@ -86,7 +86,17 @@ public class RaceLogicOnline : MonoBehaviour
                     winText.color = new Color32(173, 75, 55, 255);
                     winText.enabled = true;
                     
-                    endGame();
+                    if (NetworkManager.Singleton.IsHost)
+                    {
+                        NetworkManager.Singleton.StopAllCoroutines();
+                        StartCoroutine(WaitBeforeEnd(3));
+                    }
+
+                    else if (NetworkManager.Singleton.IsClient)
+                    {
+                        NetworkManager.Singleton.StopAllCoroutines();
+                        StartCoroutine(WaitBeforeEnd(5));
+                    }
 
                     _noWinner = false;
 
@@ -122,7 +132,17 @@ public class RaceLogicOnline : MonoBehaviour
                     winText.color = new Color32(52, 65, 147, 255);
                     winText.enabled = true;
                     
-                    endGame();
+                    if (NetworkManager.Singleton.IsHost)
+                    {
+                        NetworkManager.Singleton.StopAllCoroutines();
+                        StartCoroutine(WaitBeforeEnd(3));
+                    }
+
+                    else if (NetworkManager.Singleton.IsClient)
+                    {
+                        NetworkManager.Singleton.StopAllCoroutines();
+                        StartCoroutine(WaitBeforeEnd(5));
+                    }
 
                     _noWinner = false;
 
@@ -156,27 +176,7 @@ public class RaceLogicOnline : MonoBehaviour
         Time.timeScale = 1;
         _isMenuOpen = false;
     }
-
-    private void endGame()
-    {
-        if (NetworkManager.Singleton.IsHost)
-        {
-            NetworkManager.Singleton.StopAllCoroutines();
-            NetworkManager.Singleton.Shutdown();
-            StartCoroutine(WaitBeforeEnd(3));
-        }
-
-        else if (NetworkManager.Singleton.IsClient)
-        {
-            NetworkManager.Singleton.StopAllCoroutines();
-            NetworkManager.Singleton.Shutdown();
-            StartCoroutine(WaitBeforeEnd(5));
-        }
-        else if (!NetworkManager.Singleton.IsHost && !NetworkManager.Singleton.IsClient)
-        {
-            _isRaceOver = true;
-        }
-    }
+    
     
     IEnumerator WaitBeforeEnd(int time)
     {
