@@ -14,6 +14,8 @@ public class OptionMenu : MonoBehaviour
     [SerializeField] private GameObject controlsOptionCanvas;
     
     [SerializeField] private GameObject levelSelectCanvas;
+    
+    [SerializeField] private GameObject resolutionCanvas;
 
     [SerializeField] private Button returnButton;
     
@@ -36,6 +38,17 @@ public class OptionMenu : MonoBehaviour
         levelSelectCanvas.SetActive(true);
     }
 
+    public void OnResolutionClick()
+    {
+        mainOptionCanvas.SetActive(false);
+        resolutionCanvas.SetActive(true);
+    }
+
+    public void UpdateResolution(Vector2 newResolution, bool fullscreen)
+    {
+        Screen.SetResolution((int) newResolution.x, (int) newResolution.y, fullscreen);
+    }
+
     public void OnReturnClick()
     {
         if (controlsOptionCanvas.activeSelf || levelSelectCanvas.activeSelf)
@@ -56,6 +69,7 @@ public class OptionMenu : MonoBehaviour
                 mainOptionCanvas.SetActive(false);
                 controlsOptionCanvas.SetActive(false);
                 returnButton.gameObject.SetActive(false);
+                resolutionCanvas.gameObject.SetActive(false);
                 pressEscText.gameObject.SetActive(true);
             }
         }
