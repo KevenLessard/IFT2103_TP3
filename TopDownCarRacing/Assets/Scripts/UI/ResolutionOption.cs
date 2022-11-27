@@ -25,16 +25,23 @@ public class ResolutionOption : MonoBehaviour
         _actualResolutions = new List<Resolution>();
         foreach (Resolution res in _resolutions)
         {
-            if (dropdown.options.SingleOrDefault((data => data.text == res.width.ToString() + " x " + res.height.ToString())) == null)
+            if ((float)res.height / (float)res.width == 0.5625f)
             {
-                dropdown.options.Add(new TMP_Dropdown.OptionData(res.width.ToString() + " x " + res.height.ToString()));
-                _actualResolutions.Add(res);
+                if (dropdown.options.SingleOrDefault((data =>
+                        data.text == res.width.ToString() + " x " + res.height.ToString())) == null)
+                {
+                    dropdown.options.Add(
+                        new TMP_Dropdown.OptionData(res.width.ToString() + " x " + res.height.ToString()));
+                    _actualResolutions.Add(res);
+                }
             }
         }
     }
+
     public void UpdateResolutionOnClick()
     {
-        Vector2 newResolution = new Vector2(_actualResolutions[dropdown.value].width, _actualResolutions[dropdown.value].height);
+        Vector2 newResolution = new Vector2(_actualResolutions[dropdown.value].width,
+            _actualResolutions[dropdown.value].height);
 
         optionMenu.UpdateResolution(newResolution, fullscreenToggle.isOn);
     }
