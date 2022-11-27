@@ -25,7 +25,6 @@ public class PlayerNetwork : NetworkBehaviour
         {
             if (_1stframe)
             {
-                //gameObject.transform.position = new Vector3(-50, 6, 0);
                 _1stframe = false;
             }
 
