@@ -3,10 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="84c2c30f-655c-4d94-881c-34c4c680c51e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCarRacing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownCarRacing/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TitleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TitleController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/OptionMenuPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/OptionMenuPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_one.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_one.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Online/OnlineTopDownCarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Online/OnlineTopDownCarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Online/RaceLogicOnline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Online/RaceLogicOnline.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +28,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RaceLogic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/OptionControls.cs" root0="FORCE_HIGHLIGHTING" />
+<<<<<<< Updated upstream
+=======
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ResolutionOption.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Core/NetworkObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.netcode.gameobjects@1.1.0/Runtime/Transports/UTP/UnityTransport.cs" root0="SKIP_HIGHLIGHTING" />
+>>>>>>> Stashed changes
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -90,6 +106,19 @@
       <workItem from="1668631109741" duration="18624000" />
       <workItem from="1668711107042" duration="13947000" />
       <workItem from="1668991185219" duration="784000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1669325768570" duration="5713000" />
+      <workItem from="1669389923980" duration="2768000" />
+      <workItem from="1669400090156" duration="89000" />
+      <workItem from="1669400202469" duration="4111000" />
+      <workItem from="1669406710465" duration="1188000" />
+      <workItem from="1669418906504" duration="7915000" />
+      <workItem from="1669430547967" duration="299000" />
+      <workItem from="1669477513564" duration="2405000" />
+      <workItem from="1669489242401" duration="8962000" />
+      <workItem from="1669560366186" duration="815000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
