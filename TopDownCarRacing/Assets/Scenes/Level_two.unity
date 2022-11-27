@@ -3305,6 +3305,7 @@ MonoBehaviour:
   maxSpeed: 20
   acceleration: 8
   steering: 4
+  speedBoostTime: 0
 --- !u!61 &1733077500
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3527,7 +3528,7 @@ MonoBehaviour:
   - {fileID: 205405271}
   - {fileID: 47048536}
   - {fileID: 1720727705}
-  numberOfLaps: 3
+  numberOfLaps: 4
 --- !u!4 &2038237295
 Transform:
   m_ObjectHideFlags: 0

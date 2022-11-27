@@ -22,4 +22,8 @@ public class LevelSelectScreen : MonoBehaviour
     {
         optionMenu.LoadScene("Level_three");
     }
+    
+    public void OnlevelOnlineClick(){
+        optionMenu.LoadScene("OnlineLevel");
+    }
 }

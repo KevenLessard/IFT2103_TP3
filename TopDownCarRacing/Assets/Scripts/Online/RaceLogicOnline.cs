@@ -30,14 +30,12 @@ public class RaceLogicOnline : MonoBehaviour
 
     private bool _isMenuOpen;
     private bool _isRaceOver;
-    private int _counter;
     private bool _noWinner = true;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        int _counter = 0;
         _isRaceOver = false;
         _currentLapOne = 0;
         _currentLapTwo = 0;
