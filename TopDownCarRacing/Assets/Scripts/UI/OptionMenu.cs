@@ -16,14 +16,23 @@ public class OptionMenu : MonoBehaviour
     [SerializeField] private GameObject levelSelectCanvas;
     
     [SerializeField] private GameObject resolutionCanvas;
+    
+    [SerializeField] private GameObject loadScreenCanvas;
 
     [SerializeField] private Button returnButton;
     
     [SerializeField] private TextMeshProUGUI pressEscText;
 
+    [SerializeField] private Slider slider;
+    
     public void OnQuitGameClick()
     {
         Application.Quit();
+    }
+
+    public void OnMainMenuClick()
+    {
+        LoadScene("Title_screen");
     }
 
     public void OnControlsClick()
@@ -76,7 +85,22 @@ public class OptionMenu : MonoBehaviour
     }
     public void LoadScene(string level)
     {
-        SceneManager.LoadScene(level);
         Time.timeScale = 1;
+        StartCoroutine(Load(level));
+    }
+    
+    private IEnumerator Load(string level)
+    {        
+        levelSelectCanvas.SetActive(false);
+        controlsOptionCanvas.SetActive(false);
+        mainOptionCanvas.SetActive(false);
+        loadScreenCanvas.SetActive(true);
+        AsyncOperation handle = SceneManager.LoadSceneAsync(level);
+        while (!handle.isDone)
+        {
+            float progress = Mathf.Clamp01(handle.progress / .9f);
+            slider.value = progress;
+            yield return null;
+        }
     }
 }

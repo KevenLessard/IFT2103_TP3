@@ -9,7 +9,6 @@ public class LevelSelectScreen : MonoBehaviour
     [SerializeField] private OptionMenu optionMenu;
     public void OnLevelOneClick()
     {
-        
         optionMenu.LoadScene("Level_one");
     }
 
