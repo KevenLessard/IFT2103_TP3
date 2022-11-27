@@ -20,9 +20,10 @@ public class NetworkManagerHUD : MonoBehaviour
 
     public void StartHost()
     {
-        if (IP.Length != 0)
+        NetworkManager.Singleton.StopAllCoroutines();
+        NetworkManager.Singleton.Shutdown();
+        if (IP.Length != 0 && !NetworkManager.Singleton.IsHost)
         {
-            NetworkManager.Singleton.StopAllCoroutines();
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(IP, 7777, "0.0.0.0");
             NetworkManager.Singleton.StartHost();
             LanMenu.SetActive(false);
@@ -30,10 +31,11 @@ public class NetworkManagerHUD : MonoBehaviour
     }
 
     public void JoinHost()
-    {
+    {            
+        NetworkManager.Singleton.StopAllCoroutines();
         if (IP.Length != 0)
         {
-            NetworkManager.Singleton.StopAllCoroutines();
+
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(IP, 7777, "0.0.0.0");
             NetworkManager.Singleton.StartClient();
             StartCoroutine(WaitForClientConnection(1));
@@ -55,6 +57,12 @@ public class NetworkManagerHUD : MonoBehaviour
         if(NetworkManager.Singleton.IsConnectedClient)
         {
             LanMenu.SetActive(false);
+        }
+        else
+        {
+            NetworkManager.Singleton.StopAllCoroutines();
+            NetworkManager.Singleton.Shutdown();
+
         }
     }
     

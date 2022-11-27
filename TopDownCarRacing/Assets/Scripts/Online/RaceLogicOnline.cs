@@ -162,11 +162,14 @@ public class RaceLogicOnline : MonoBehaviour
         if (NetworkManager.Singleton.IsHost)
         {
             NetworkManager.Singleton.StopAllCoroutines();
+            NetworkManager.Singleton.Shutdown();
             StartCoroutine(WaitBeforeEnd(3));
         }
 
         else if (NetworkManager.Singleton.IsClient)
         {
+            NetworkManager.Singleton.StopAllCoroutines();
+            NetworkManager.Singleton.Shutdown();
             StartCoroutine(WaitBeforeEnd(5));
         }
         else if (!NetworkManager.Singleton.IsHost && !NetworkManager.Singleton.IsClient)
