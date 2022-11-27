@@ -33,21 +33,29 @@ public class NetworkManagerHUD : MonoBehaviour
     {
         if (IP.Length != 0)
         {
+            NetworkManager.Singleton.StopAllCoroutines();
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(IP, 7777, "0.0.0.0");
-        
             NetworkManager.Singleton.StartClient();
-            if(NetworkManager.Singleton.IsConnectedClient)
-            {
-                LanMenu.SetActive(false);
-            }
+            StartCoroutine(WaitForClientConnection(1));
         }
 
     }
-
+    
+    
     public void ReadStringInput(string s)
     {
         IP = s;
         Debug.Log(IP);
+    }
+    
+    IEnumerator WaitForClientConnection(int time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if(NetworkManager.Singleton.IsConnectedClient)
+        {
+            LanMenu.SetActive(false);
+        }
     }
     
     

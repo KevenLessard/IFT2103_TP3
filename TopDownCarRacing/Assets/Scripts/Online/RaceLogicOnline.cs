@@ -85,17 +85,8 @@ public class RaceLogicOnline : MonoBehaviour
                     winText.SetText("You won!");
                     winText.color = new Color32(173, 75, 55, 255);
                     winText.enabled = true;
-
-                    if (NetworkManager.Singleton.IsHost)
-                    {
-                        NetworkManager.Singleton.StopAllCoroutines();
-                        StartCoroutine(WaitBeforeEnd(3));
-                    }
-
-                    else if (NetworkManager.Singleton.IsClient)
-                    {
-                        StartCoroutine(WaitBeforeEnd(5));
-                    }
+                    
+                    endGame();
 
                     _noWinner = false;
 
@@ -131,16 +122,7 @@ public class RaceLogicOnline : MonoBehaviour
                     winText.color = new Color32(52, 65, 147, 255);
                     winText.enabled = true;
                     
-                    if (NetworkManager.Singleton.IsHost)
-                    {
-                        NetworkManager.Singleton.StopAllCoroutines();
-                        StartCoroutine(WaitBeforeEnd(3));
-                    }
-
-                    else if (NetworkManager.Singleton.IsClient)
-                    {
-                        StartCoroutine(WaitBeforeEnd(5));
-                    }
+                    endGame();
 
                     _noWinner = false;
 
@@ -175,6 +157,24 @@ public class RaceLogicOnline : MonoBehaviour
         _isMenuOpen = false;
     }
 
+    private void endGame()
+    {
+        if (NetworkManager.Singleton.IsHost)
+        {
+            NetworkManager.Singleton.StopAllCoroutines();
+            StartCoroutine(WaitBeforeEnd(3));
+        }
+
+        else if (NetworkManager.Singleton.IsClient)
+        {
+            StartCoroutine(WaitBeforeEnd(5));
+        }
+        else if (!NetworkManager.Singleton.IsHost && !NetworkManager.Singleton.IsClient)
+        {
+            _isRaceOver = true;
+        }
+    }
+    
     IEnumerator WaitBeforeEnd(int time)
     {
         yield return new WaitForSeconds(time);
