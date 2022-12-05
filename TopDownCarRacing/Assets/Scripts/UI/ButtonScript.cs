@@ -23,7 +23,7 @@ public class ButtonScript : MonoBehaviour
     {
         _image = GetComponent<Image>();
         _image.color = defaultColor;
-        _colorSwitchTime = 0.3f;
+        _colorSwitchTime = 2f;
     }
 
     private void Update()
@@ -77,11 +77,16 @@ public class ButtonScript : MonoBehaviour
         float timeElapsed = 0;
         while (timeElapsed < _colorSwitchTime)
         {
-            _buttonColor = Color.Lerp(startingColor, endColor, timeElapsed / _colorSwitchTime);
+            _buttonColor = Color.Lerp(startingColor, endColor, Easing(0, 1, timeElapsed / _colorSwitchTime));
             _image.color = _buttonColor;
             timeElapsed += Time.unscaledDeltaTime;
             yield return null;
         }
+    }
+    private float Easing(float start, float end, float value)
+    {
+        end -= start;
+        return -end * value * (value - 2) + start;
     }
 
     public void OnEnable()
