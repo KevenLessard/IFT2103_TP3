@@ -23,7 +23,7 @@ public class ButtonScript : MonoBehaviour
     {
         _image = GetComponent<Image>();
         _image.color = defaultColor;
-        _colorSwitchTime = 2f;
+        _colorSwitchTime = 0.3f;
     }
 
     private void Update()
