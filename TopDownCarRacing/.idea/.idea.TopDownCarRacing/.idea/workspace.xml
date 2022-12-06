@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="84c2c30f-655c-4d94-881c-34c4c680c51e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCarRacing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownCarRacing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_one.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_one.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RaceLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RaceLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +19,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Finish_line.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RaceLogic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CountdownLights.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LevelSelectScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/OptionControls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ResolutionOption.cs" root0="FORCE_HIGHLIGHTING" />
@@ -72,10 +76,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="32924">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="5412">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="32924" />
+      <option name="pid" value="5412" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -109,7 +113,10 @@
       <workItem from="1669562563205" duration="7183000" />
       <workItem from="1669576570558" duration="3740000" />
       <workItem from="1670188417590" duration="4525000" />
-      <workItem from="1670201606723" duration="9570000" />
+      <workItem from="1670201606723" duration="9799000" />
+      <workItem from="1670271380997" duration="3598000" />
+      <workItem from="1670281793619" duration="5699000" />
+      <workItem from="1670289201509" duration="413000" />
     </task>
     <servers />
   </component>
@@ -134,6 +141,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/RaceLogic.cs</url>
+          <line>43</line>
+          <properties documentPath="C:\Users\keven\OneDrive\Documents\Ecole\IFT-2103\TP2\IFT2103A22_TP2_Equipe03\TopDownCarRacing\Assets\Scripts\RaceLogic.cs" initialLine="43" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="1063" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1082" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Frame#InputManager.GetInput" memberName="playerNumber" />

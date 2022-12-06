@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 998073973680873961}
   - component: {fileID: 7715412055617718124}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2029101011
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: 724182907
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

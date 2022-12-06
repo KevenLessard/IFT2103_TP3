@@ -13,6 +13,8 @@ public class RaceLogic : MonoBehaviour
     [SerializeField] private TextMeshProUGUI winText;
     [SerializeField] private GameObject optionMenu;
     [SerializeField] private GameObject[] checkpoints;
+    [SerializeField] private CountdownLights countdownLights;
+    
     private GameObject _optionMenuInstance;
 
     [SerializeField] private int numberOfLaps;
@@ -35,7 +37,8 @@ public class RaceLogic : MonoBehaviour
 
     private bool _isRaceOver;
 
-    // Start is called before the first frame update
+    private bool _isRaceStarted;
+
     void Start()
     {
         _currentLapOne = 0;
@@ -49,11 +52,18 @@ public class RaceLogic : MonoBehaviour
         _isRaceOver = false;
         playerOneText.SetText($"Lap: {_currentLapOne}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
         playerTwoText.SetText($"Lap: {_currentLapTwo}/{numberOfLaps}\nLast lap:\n--\nBest lap:\n--");
+
+        StartCoroutine(StartRace());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!_isRaceStarted)
+        {
+            return;
+        }
+        
         _timeOne += Time.deltaTime;
         _timeTwo += Time.deltaTime;
 
@@ -189,5 +199,14 @@ public class RaceLogic : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         _isRaceOver = true;
+    }
+
+    private IEnumerator StartRace()
+    {
+        _isRaceStarted = false;
+        Time.timeScale = 0;
+        yield return StartCoroutine(countdownLights.PlayAnimation());
+        Time.timeScale = 1;
+        _isRaceStarted = true;
     }
 }

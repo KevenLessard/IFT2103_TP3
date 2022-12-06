@@ -626,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 157040073235659884}
+      objectReference: {fileID: 4856124845897921691}
     - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -641,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClick
+      value: OnStartGameClick
       objectReference: {fileID: 0}
     - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -649,7 +649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ButtonScript, Assembly-CSharp
+      value: TitleScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName

@@ -6976,6 +6976,34 @@ PrefabInstance:
       propertyPath: m_text
       value: Quit game
       objectReference: {fileID: 0}
+    - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3878145906612382484}
+    - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnQuitGameClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: OptionMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5335556550879844975, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
       propertyPath: m_Pivot.x
       value: 0
