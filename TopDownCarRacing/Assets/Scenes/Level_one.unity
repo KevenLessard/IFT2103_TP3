@@ -1577,6 +1577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_two
       objectReference: {fileID: 0}
+    - target: {fileID: 8260570613035733398, guid: 5baadbd79fbf7c04d9db9c5f92d03366, type: 3}
+      propertyPath: _carParts
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ca0de7c862e3434694334b52c2e7252, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5baadbd79fbf7c04d9db9c5f92d03366, type: 3}
 --- !u!1001 &1040982222
@@ -3392,6 +3396,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_one
       objectReference: {fileID: 0}
+    - target: {fileID: 8260570613035733398, guid: 5baadbd79fbf7c04d9db9c5f92d03366, type: 3}
+      propertyPath: _carParts
+      value: 
+      objectReference: {fileID: 11400000, guid: a6bdf7a4f93179345a4d0266353081bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5baadbd79fbf7c04d9db9c5f92d03366, type: 3}
 --- !u!1001 &7750913012445435981
