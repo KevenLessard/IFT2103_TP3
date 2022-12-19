@@ -35,7 +35,8 @@ public class TitleScreen : MonoBehaviour
                 isKeyPressed = true;
                 pressAnyKeyText.enabled = false;
                 layout.SetActive(true);
-                TitleMusicManager.Instance.StartMusic();
+                TitleMusicManager.Instance.playOpeningJingle();
+                StartCoroutine(waitMusic(1));
             }
         }
     }
@@ -53,5 +54,11 @@ public class TitleScreen : MonoBehaviour
     public void OnOptionClick()
     {
         TitleController.Instance.OpenOptionMenu();
+    }
+    
+    IEnumerator waitMusic(int time)
+    {
+        yield return new WaitForSeconds(time);
+        TitleMusicManager.Instance.StartMusic();
     }
 }
