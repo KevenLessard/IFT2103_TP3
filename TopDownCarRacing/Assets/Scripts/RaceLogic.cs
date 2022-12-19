@@ -205,7 +205,9 @@ public class RaceLogic : MonoBehaviour
     {
         _isRaceStarted = false;
         Time.timeScale = 0;
+        RaceAudioManager.Instance.StartAmbientSong();
         yield return StartCoroutine(countdownLights.PlayAnimation());
+        RaceAudioManager.Instance.StartMusic();
         Time.timeScale = 1;
         _isRaceStarted = true;
     }
