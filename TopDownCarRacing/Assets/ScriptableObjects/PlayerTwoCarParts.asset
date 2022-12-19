@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1541fe6f3931c24e94bee3776ed5c23, type: 3}
   m_Name: PlayerTwoCarParts
   m_EditorClassIdentifier: 
-  carFrame: {fileID: 0}
-  window: {fileID: 0}
+  carScale: {x: 1, y: 1.5, z: 1}
+  frameColor: {r: 1, g: 0, b: 0, a: 1}
+  windowColor: {r: 1, g: 1, b: 1, a: 1}
+  carPaint: {fileID: 21300000, guid: 084bb540330e6b047a2e403d4dbefadf, type: 3}
+  paintColor: {r: 1, g: 0.86289185, b: 0, a: 1}

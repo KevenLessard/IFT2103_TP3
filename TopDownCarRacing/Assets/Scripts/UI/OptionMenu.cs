@@ -13,6 +13,8 @@ public class OptionMenu : MonoBehaviour
 
     [SerializeField] private GameObject controlsOptionCanvas;
     
+    [SerializeField] private GameObject carsOptionCanvas;
+    
     [SerializeField] private GameObject levelSelectCanvas;
     
     [SerializeField] private GameObject resolutionCanvas;
@@ -41,6 +43,12 @@ public class OptionMenu : MonoBehaviour
         controlsOptionCanvas.SetActive(true);
     }
 
+    public void OnCarsClick()
+    {
+        mainOptionCanvas.SetActive(false);
+        carsOptionCanvas.SetActive(true);
+    }
+
     public void OnLevelSelectClick()
     {
         mainOptionCanvas.SetActive(false);
@@ -60,10 +68,11 @@ public class OptionMenu : MonoBehaviour
 
     public void OnReturnClick()
     {
-        if (controlsOptionCanvas.activeSelf || levelSelectCanvas.activeSelf)
+        if (controlsOptionCanvas.activeSelf || levelSelectCanvas.activeSelf || carsOptionCanvas.activeSelf)
         {
             levelSelectCanvas.SetActive(false);
             controlsOptionCanvas.SetActive(false);
+            carsOptionCanvas.SetActive(false);
             mainOptionCanvas.SetActive(true);
         }
         else
@@ -77,6 +86,7 @@ public class OptionMenu : MonoBehaviour
             {
                 mainOptionCanvas.SetActive(false);
                 controlsOptionCanvas.SetActive(false);
+                carsOptionCanvas.SetActive(false);
                 returnButton.gameObject.SetActive(false);
                 resolutionCanvas.gameObject.SetActive(false);
                 pressEscText.gameObject.SetActive(true);
@@ -94,6 +104,7 @@ public class OptionMenu : MonoBehaviour
         levelSelectCanvas.SetActive(false);
         controlsOptionCanvas.SetActive(false);
         mainOptionCanvas.SetActive(false);
+        carsOptionCanvas.SetActive(false);
         loadScreenCanvas.SetActive(true);
         AsyncOperation handle = SceneManager.LoadSceneAsync(level);
         while (!handle.isDone)

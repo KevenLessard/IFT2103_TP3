@@ -11,10 +11,15 @@ public class Car : MonoBehaviour
 
     [SerializeField] private SpriteRenderer carWindow;
     
+    [SerializeField] private SpriteRenderer carPaint;
+    
     // Start is called before the first frame update
     void Start()
     {
-        carFrame = _carParts.carFrame;
-        carWindow = _carParts.window;
+        carFrame.color = _carParts.frameColor;
+        carWindow.color = _carParts.windowColor;
+        carPaint.sprite= _carParts.carPaint;
+        carPaint.color = _carParts.paintColor;
+        transform.localScale = _carParts.carScale;
     }
 }
