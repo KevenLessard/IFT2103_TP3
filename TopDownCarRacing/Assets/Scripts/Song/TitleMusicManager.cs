@@ -5,6 +5,7 @@ using UnityEngine;
 public class TitleMusicManager : MonoBehaviour
 {
     public AudioSource audioSource;
+    public AudioClip[] audioClipArray;
     public static TitleMusicManager Instance;
 
     private void Awake()
@@ -14,6 +15,11 @@ public class TitleMusicManager : MonoBehaviour
     
     public void StartMusic()
     {
-        audioSource.Play();
+        //audioSource.Play();
+        audioSource.PlayOneShot(RandomClip());
+    }
+    
+    AudioClip RandomClip(){
+        return audioClipArray[Random.Range(0, audioClipArray.Length)];
     }
 }
