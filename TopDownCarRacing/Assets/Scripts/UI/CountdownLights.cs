@@ -10,6 +10,7 @@ public class CountdownLights : MonoBehaviour
     [SerializeField] private Transform end;
 
     [SerializeField] private List<Transform> lights;
+    [SerializeField] private List<AudioSource> lightsSound;
 
     [SerializeField] private float animationTime;
 
@@ -44,6 +45,7 @@ public class CountdownLights : MonoBehaviour
     private IEnumerator Animation(int pCurrentLight)
     {
         float timeElapsed = 0;
+        lightsSound[pCurrentLight].Play();
         while (timeElapsed < animationTime)
         {
             lights[pCurrentLight].position = LerpV3(start.position, end.position, GetBezierCubicPoint(timeElapsed / animationTime).y);
