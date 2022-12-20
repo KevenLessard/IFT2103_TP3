@@ -7,6 +7,7 @@ public class TitleMusicManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] audioClipArray;
     public static TitleMusicManager Instance;
+    public AudioSource openingJingle;
 
     private void Awake()
     {
@@ -21,5 +22,10 @@ public class TitleMusicManager : MonoBehaviour
     
     AudioClip RandomClip(){
         return audioClipArray[Random.Range(0, audioClipArray.Length)];
+    }
+
+    public void playOpeningJingle()
+    {
+        openingJingle.Play();
     }
 }

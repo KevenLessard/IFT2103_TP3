@@ -8,12 +8,14 @@ public class Obstacle : MonoBehaviour
     [SerializeField]private GameObject mur1;
     [SerializeField]private GameObject mur2;
     [SerializeField]private GameObject murTournant;
+    [SerializeField]private AudioSource closingSound;
     private int state = 1;
 
     private void OnTriggerEnter2D(Collider2D pCollider2D)
     {
         if (state == 1)
         {
+            playClosingSound();
             mur1.SetActive(false);
             mur2.SetActive(true);
             murTournant.SetActive(false);
@@ -22,6 +24,7 @@ public class Obstacle : MonoBehaviour
         
         else if (state == 2)
         {
+            playClosingSound();
             mur1.SetActive(false);
             mur2.SetActive(false);
             murTournant.SetActive(true);
@@ -30,12 +33,15 @@ public class Obstacle : MonoBehaviour
         
         else if (state == 3)
         {
+            playClosingSound();
             mur1.SetActive(false);
             mur2.SetActive(false);
             murTournant.SetActive(true);
             state = 1;
         }
-
-
+    }
+    private void playClosingSound()
+    {
+        closingSound.Play();
     }
 }

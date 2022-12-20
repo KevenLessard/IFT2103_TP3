@@ -63,7 +63,7 @@ public class RaceLogic : MonoBehaviour
         {
             return;
         }
-        
+        DynamicMusicManager.Instance.ChangeSong(_currentLapOne);
         _timeOne += Time.deltaTime;
         _timeTwo += Time.deltaTime;
 
@@ -105,6 +105,7 @@ public class RaceLogic : MonoBehaviour
 
             if (_currentLapOne == numberOfLaps + 1)
             {
+                DynamicMusicManager.Instance.playVictoryJingle();
                 winText.SetText("Player one wins!");
                 winText.color = new Color32(173, 75, 55, 255);
                 winText.enabled = true;
@@ -138,6 +139,7 @@ public class RaceLogic : MonoBehaviour
 
             if (_currentLapTwo == numberOfLaps + 1)
             {
+                DynamicMusicManager.Instance.playVictoryJingle();
                 winText.SetText("Player two wins!");
                 winText.color = new Color32(52, 65, 147, 255);
                 winText.enabled = true;
@@ -205,9 +207,11 @@ public class RaceLogic : MonoBehaviour
     {
         _isRaceStarted = false;
         Time.timeScale = 0;
-        RaceAudioManager.Instance.StartAmbientSong();
+        //RaceAudioManager.Instance.StartAmbientSong();
+        DynamicMusicManager.Instance.StartAmbientSong();
         yield return StartCoroutine(countdownLights.PlayAnimation());
-        RaceAudioManager.Instance.StartMusic();
+        //RaceAudioManager.Instance.StartMusic();
+        DynamicMusicManager.Instance.ChangeSong(1);
         Time.timeScale = 1;
         _isRaceStarted = true;
     }

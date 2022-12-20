@@ -59,6 +59,7 @@ public class TopDownCarController : MonoBehaviour
     {
         if (collision.gameObject.name == "GoldenSnitch")
         {
+            AudioGoldenSnitch.Instance.playActivation();
             if (_speedBoost != null)
             {
                 StopCoroutine(_speedBoost);
