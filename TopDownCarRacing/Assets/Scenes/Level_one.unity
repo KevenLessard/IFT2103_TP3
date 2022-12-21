@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smokePrefab: {fileID: 6441364814597629970, guid: b117441269737417aa2a912267f4c757, type: 3}
-  celebrationPrefab: {fileID: 0}
+  celebrationPrefab: {fileID: 7415915620197445715, guid: 8e4359f88785e4cd28cc758bc79eca92, type: 3}
 --- !u!4 &152601759
 Transform:
   m_ObjectHideFlags: 0
@@ -670,6 +670,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1092662657}
     m_Modifications:
+    - target: {fileID: 2865288717486583699, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865288717486583699, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6441622978400431343, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
       propertyPath: m_Name
       value: Straight_track 2
@@ -789,6 +797,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2989198121689970888, guid: 9edf2414403c43a43865cbf45353ff30, type: 3}
   m_PrefabInstance: {fileID: 308594822}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &345793948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8139055757302084287, guid: 19d171918b15564499fd48ab3c06cae9, type: 3}
+  m_PrefabInstance: {fileID: 4903058583922414522}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &389341991 stripped
 GameObject:
@@ -2032,6 +2045,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1092662657}
     m_Modifications:
+    - target: {fileID: 2865288717486583699, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865288717486583699, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6441622978400431343, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
       propertyPath: m_Name
       value: Straight_track 4
@@ -2934,6 +2955,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curved_track 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7750913012872881136, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750913012872881136, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
 --- !u!1001 &1284381477
@@ -3013,6 +3042,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1092662657}
     m_Modifications:
+    - target: {fileID: 2865288717486583699, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865288717486583699, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6441622978400431343, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
       propertyPath: m_Name
       value: Straight_track 1
@@ -3780,6 +3817,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curved_track 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7750913012872881136, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750913012872881136, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
 --- !u!1001 &1562471272
@@ -3906,6 +3951,14 @@ PrefabInstance:
     - target: {fileID: 4614973578391990698, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
       propertyPath: m_Name
       value: Curved_track 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750913012872881136, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750913012872881136, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
@@ -4542,6 +4595,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1092662657}
     m_Modifications:
+    - target: {fileID: 2865288717486583699, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865288717486583699, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6441622978400431343, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
       propertyPath: m_Name
       value: Straight_track 3
@@ -4709,6 +4770,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1092662657}
     m_Modifications:
+    - target: {fileID: 2865288717486583699, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865288717486583699, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6441622978400431343, guid: 1dc7bc6073b86544eae7f3d7c6e46c62, type: 3}
       propertyPath: m_Name
       value: Straight_track
@@ -4827,6 +4896,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 277339533}
     - target: {fileID: 4091164098178090563, guid: 9ddd1418af1838449ade3cefb3c8bc25, type: 3}
+      propertyPath: celebrationZone
+      value: 
+      objectReference: {fileID: 345793948}
+    - target: {fileID: 4091164098178090563, guid: 9ddd1418af1838449ade3cefb3c8bc25, type: 3}
       propertyPath: checkpoints.Array.data[0]
       value: 
       objectReference: {fileID: 1788193042}
@@ -4887,6 +4960,14 @@ PrefabInstance:
       propertyPath: raceLogic
       value: 
       objectReference: {fileID: 2038237294}
+    - target: {fileID: 4903058583458323350, guid: 19d171918b15564499fd48ab3c06cae9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903058583458323350, guid: 19d171918b15564499fd48ab3c06cae9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8139055757302084287, guid: 19d171918b15564499fd48ab3c06cae9, type: 3}
       propertyPath: m_Name
       value: Finish_line_track
@@ -5064,6 +5145,14 @@ PrefabInstance:
     - target: {fileID: 4614973578391990698, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
       propertyPath: m_Name
       value: Curve_track
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750913012872881136, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750913012872881136, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70dcaf354aa566d4c9ab91311d9b57f3, type: 3}
