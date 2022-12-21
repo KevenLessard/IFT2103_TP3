@@ -11,6 +11,7 @@ public class TopDownCarController : MonoBehaviour
     [SerializeField] private float acceleration;
     [SerializeField] private float steering;
     [SerializeField] private float speedBoostTime;
+    [SerializeField] private Animator fireAnimator;
     private float _maxSpeed;
     private float _acceleration;
 
@@ -28,6 +29,14 @@ public class TopDownCarController : MonoBehaviour
     {
         Vector2 inputs = GetInput();
 
+        if (inputs.x == 1)
+        {
+            fireAnimator.SetBool("Gas on", true);
+        }
+        else
+        {
+            fireAnimator.SetBool("Gas on", false);
+        }
         // Calculate speed from input and acceleration (transform.up is forward)
         Vector2 speed = transform.up * (inputs.x * _acceleration);
         _rb.AddForce(speed);
@@ -100,6 +109,7 @@ public class TopDownCarController : MonoBehaviour
     {
         _maxSpeed = maxSpeed * 1.5f;
         _acceleration = _maxSpeed;
+        fireAnimator.SetTrigger("Boost");
         yield return new WaitForSeconds(speedBoostTime);
         _maxSpeed = maxSpeed;
         _acceleration = acceleration;
