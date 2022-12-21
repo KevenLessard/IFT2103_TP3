@@ -26,6 +26,16 @@ public class OptionMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pressEscText;
 
     [SerializeField] private Slider slider;
+
+    [SerializeField] private Button modifyCarButton;
+
+    private void Start()
+    {
+        if (!TitleController.Instance)
+        {
+            modifyCarButton.gameObject.SetActive(false);
+        }
+    }
     
     public void OnQuitGameClick()
     {

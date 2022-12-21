@@ -125,6 +125,7 @@ MonoBehaviour:
   returnButton: {fileID: 9144102622736066705}
   pressEscText: {fileID: 4078898830103409328}
   slider: {fileID: 6000852088008899059}
+  modifyCarButton: {fileID: 1653310658461282644}
 --- !u!1 &38851850361169017
 GameObject:
   m_ObjectHideFlags: 0
@@ -16884,6 +16885,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
+--- !u!114 &1653310658461282644 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3187206219259612410, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
+  m_PrefabInstance: {fileID: 4236346162343394734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8124830222460823489 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5335556550879844975, guid: 6bb6d8e54c95c874bb680208771c2585, type: 3}
