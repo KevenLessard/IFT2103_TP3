@@ -14,8 +14,11 @@ public class RaceLogic : MonoBehaviour
     [SerializeField] private GameObject optionMenu;
     [SerializeField] private GameObject[] checkpoints;
     [SerializeField] private CountdownLights countdownLights;
+    [SerializeField] private GameObject celebrationZone;
     
     private GameObject _optionMenuInstance;
+    
+
 
     [SerializeField] private int numberOfLaps;
 
@@ -87,6 +90,7 @@ public class RaceLogic : MonoBehaviour
 
     public void UpdateText(string pPlayer)
     {
+    GameObject celebration = ParticlePool.instance.GetPooledCelebration();
         if (pPlayer == "Player_one")
         {
             if (_currentCheckpointOne != _numberOfCheckpoints)
@@ -105,6 +109,8 @@ public class RaceLogic : MonoBehaviour
 
             if (_currentLapOne == numberOfLaps + 1)
             {
+                celebration.transform.position = celebrationZone.transform.position;
+                celebration.SetActive(true);
                 DynamicMusicManager.Instance.playVictoryJingle();
                 winText.SetText("Player one wins!");
                 winText.color = new Color32(173, 75, 55, 255);
@@ -139,6 +145,9 @@ public class RaceLogic : MonoBehaviour
 
             if (_currentLapTwo == numberOfLaps + 1)
             {
+
+                celebration.transform.position = celebrationZone.transform.position;
+                celebration.SetActive(true);
                 DynamicMusicManager.Instance.playVictoryJingle();
                 winText.SetText("Player two wins!");
                 winText.color = new Color32(52, 65, 147, 255);

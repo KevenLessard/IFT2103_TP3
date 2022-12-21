@@ -47,11 +47,13 @@ public class ButtonScript : MonoBehaviour
         if (_hoverCoroutine == null)
         {
             _hoverCoroutine = StartCoroutine(ColorSwitch(_image.color, hoverColor));
+            TitleMusicManager.Instance.playClickingSound();
         }
         else
         {
             StopCoroutine(_hoverCoroutine);
             _hoverCoroutine = StartCoroutine(ColorSwitch(_image.color, hoverColor));
+            TitleMusicManager.Instance.playClickingSound();
         }
     }
 
@@ -96,6 +98,7 @@ public class ButtonScript : MonoBehaviour
 
     public void OnClick()
     {
+
         _image.color = hoverColor;
         _isLocked = true;
     }

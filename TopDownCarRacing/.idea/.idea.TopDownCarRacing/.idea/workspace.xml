@@ -3,7 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="84c2c30f-655c-4d94-881c-34c4c680c51e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCarRacing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownCarRacing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Car.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Car.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_one.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_one.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_three.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_three.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_two.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_two.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Title_screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Title_screen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obstacle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RaceLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RaceLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Song/TitleMusicManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Song/TitleMusicManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Songs/Music/Avril Lavigne Skater Boy  Lyrics.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Songs/Music/Avril Lavigne Skater Boy  Lyrics.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Songs/Music/Coconut Mall - Mario Kart Wii OST.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Songs/Music/Coconut Mall - Mario Kart Wii OST.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/spacex-tesla-roadster-earth-starman-wallpaper-preview.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/spacex-tesla-roadster-earth-starman-wallpaper-preview.jpg.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
@@ -49,6 +62,13 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C++&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/hugochiasson/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/hugochiasson/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/hugochiasson/.local/share/Symbols/src&quot;
+    ]
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -60,8 +80,16 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.14f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.14f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\keven\OneDrive\Documents\Ecole\IFT-2103\TP2\IFT2103A22_TP2_Equipe03\TopDownCarRacing -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\keven\OneDrive\Documents\Ecole\IFT-2103\TP2\IFT2103A22_TP2_Equipe03\TopDownCarRacing" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -124,6 +152,9 @@
       <workItem from="1671199940887" duration="827000" />
       <workItem from="1671385769730" duration="14981000" />
       <workItem from="1671470370504" duration="2345000" />
+      <workItem from="1671634872318" duration="1787000" />
+      <workItem from="1671643652973" duration="7000" />
+      <workItem from="1671643763429" duration="4181000" />
     </task>
     <servers />
   </component>
