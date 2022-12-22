@@ -3451,7 +3451,17 @@ MonoBehaviour:
   musicToChange2: {fileID: 905948303}
   musicToChange3: {fileID: 905948302}
   victoryJingle: {fileID: 905948301}
+  crowdAudioSourcesArray: []
+  obstacleAudioSourcesArray:
+  - {fileID: 687500423}
+  - {fileID: 709345637}
+  - {fileID: 1651800145}
+  - {fileID: 587857039}
+  - {fileID: 1481060438}
   ambientSource: {fileID: 905948306}
+  musicVolume: 1
+  SFXVolume: 1
+  ambientVolume: 0.5
 --- !u!82 &905948306
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3464,7 +3474,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5922efd46da9a47869d3a4151263ac99, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.497
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

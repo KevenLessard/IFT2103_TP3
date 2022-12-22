@@ -18,4 +18,14 @@ public class AudioGoldenSnitch : MonoBehaviour
     {
         activateGoldenSnitch.Play();
     }
+    
+    public void setGoldenSnitchVolume(float value)
+    {
+        goldenSnitch.volume = value;
+    }
+    
+    public void setActivateGoldenSnitchVolume(float value)
+    {
+        activateGoldenSnitch.volume = value;
+    }
 }

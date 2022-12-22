@@ -10,7 +10,12 @@ public class Obstacle : MonoBehaviour
     [SerializeField]private GameObject murTournant;
     [SerializeField]private AudioSource closingSound;
     private int state = 1;
-    
+
+    public static Obstacle Instance;
+    private void Awake()
+    {
+        Instance = FindObjectOfType<Obstacle>();
+    }
 
     private void OnTriggerEnter2D(Collider2D pCollider2D)
     {
@@ -60,6 +65,11 @@ public class Obstacle : MonoBehaviour
     private void playClosingSound()
     {
         closingSound.Play();
+    }
+
+    public void setClosingSoundVolume(float value)
+    {
+        closingSound.volume = value;
     }
     
 

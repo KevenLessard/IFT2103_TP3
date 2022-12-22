@@ -47,13 +47,21 @@ public class ButtonScript : MonoBehaviour
         if (_hoverCoroutine == null)
         {
             _hoverCoroutine = StartCoroutine(ColorSwitch(_image.color, hoverColor));
-            TitleMusicManager.Instance.playClickingSound();
+            
+            if (TitleController.Instance)
+            {
+                TitleMusicManager.Instance.playClickingSound();
+            }
+
         }
         else
         {
             StopCoroutine(_hoverCoroutine);
             _hoverCoroutine = StartCoroutine(ColorSwitch(_image.color, hoverColor));
-            TitleMusicManager.Instance.playClickingSound();
+            if (TitleController.Instance)
+            {
+                TitleMusicManager.Instance.playClickingSound();
+            }
         }
     }
 

@@ -34,7 +34,13 @@ public class OptionMenu : MonoBehaviour
         if (!TitleController.Instance)
         {
             modifyCarButton.gameObject.SetActive(false);
+            GameObject.Find("MusicManager").GetComponent<DynamicMusicManager>().SetSliderValues();
         }
+        else
+        {
+            GameObject.Find("AudioManager").GetComponent<TitleMusicManager>().SetSliderValues();
+        }
+
     }
     
     public void OnQuitGameClick()
